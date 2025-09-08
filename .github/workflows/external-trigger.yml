@@ -33,7 +33,7 @@ jobs:
       - name: Run Python experiment script
         id: experiment
         run: |
-          python scripts/run_experiment.py --data '${{ toJSON(github.event.client_payload) }}'
+          python scripts/test.py --data '${{ toJSON(github.event.client_payload) }}'
 
       # (Optional) Step 5: Commit results back to the repository
       # If your script generates new files (e.g., a new priority order or APFD results),
