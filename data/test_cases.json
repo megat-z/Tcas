@@ -2,52 +2,32 @@
   "testCases": [
     {
       "id": "TC001",
-      "relatedFiles": ["tcas.c", "altitude_calculator.h"],
+      "relatedFiles": ["tcas.c"],
       "inputs": {
-        "parameters": {
-          "current_altitude": 10000,
-          "other_aircraft_altitude": 10500,
-          "is_ascending": true
-        },
         "rawString": "10000,10500,true"
       },
       "expectedOutput": "MONITOR"
     },
     {
       "id": "TC002",
-      "relatedFiles": ["tcas.c", "resolver.c"],
+      "relatedFiles": ["tcas.c"],
       "inputs": {
-        "parameters": {
-          "current_altitude": 10000,
-          "other_aircraft_altitude": 10100,
-          "is_ascending": true
-        },
         "rawString": "10000,10100,true"
       },
       "expectedOutput": "CLIMB"
     },
     {
       "id": "TC003",
-      "relatedFiles": ["tcas.c", "resolver.c"],
+      "relatedFiles": ["tcas.c"],
       "inputs": {
-        "parameters": {
-          "current_altitude": 25000,
-          "other_aircraft_altitude": 24900,
-          "is_ascending": false
-        },
         "rawString": "25000,24900,false"
       },
       "expectedOutput": "DESCEND"
     },
     {
       "id": "TC004",
-      "relatedFiles": ["tcas.c", "sensor_interface.h"],
+      "relatedFiles": ["tcas.c"],
       "inputs": {
-        "parameters": {
-          "current_altitude": 5000,
-          "other_aircraft_altitude": 15000,
-          "is_ascending": true
-        },
         "rawString": "5000,15000,true"
       },
       "expectedOutput": "CLEAR"
