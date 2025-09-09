@@ -4,7 +4,7 @@
       "id": "TC001",
       "relatedFiles": ["tcas.c"],
       "inputs": {
-        "rawString": "10000,10500,true"
+        "rawString": "10000,true"
       },
       "expectedOutput": "MONITOR"
     },
@@ -12,7 +12,7 @@
       "id": "TC002",
       "relatedFiles": ["tcas.c"],
       "inputs": {
-        "rawString": "10000,10100,true"
+        "rawString": "10000,true"
       },
       "expectedOutput": "CLIMB"
     },
@@ -20,7 +20,7 @@
       "id": "TC003",
       "relatedFiles": ["tcas.c"],
       "inputs": {
-        "rawString": "25000,24900,false"
+        "rawString": "25000,false"
       },
       "expectedOutput": "DESCEND"
     },
@@ -28,7 +28,7 @@
       "id": "TC004",
       "relatedFiles": ["tcas.c"],
       "inputs": {
-        "rawString": "5000,15000,true"
+        "rawString": "5000,true"
       },
       "expectedOutput": "CLEAR"
     }
