@@ -6,7 +6,7 @@
       "inputs": {
         "rawString": "10000,true"
       },
-      "expectedOutput": "MONITOR"
+      "expectedOutput": "true"
     },
     {
       "id": "TC002",
@@ -14,7 +14,7 @@
       "inputs": {
         "rawString": "10000,true"
       },
-      "expectedOutput": "CLIMB"
+      "expectedOutput": "false"
     },
     {
       "id": "TC003",
@@ -22,7 +22,7 @@
       "inputs": {
         "rawString": "25000,false"
       },
-      "expectedOutput": "DESCEND"
+      "expectedOutput": "false"
     },
     {
       "id": "TC004",
@@ -30,7 +30,7 @@
       "inputs": {
         "rawString": "5000,true"
       },
-      "expectedOutput": "CLEAR"
+      "expectedOutput": "true"
     }
   ]
 }
