@@ -31,6 +31,14 @@
         "rawString": "5000,true"
       },
       "expectedOutput": "true"
+    },
+    {
+      "id": "TC005",
+      "relatedFiles": ["tcas.c"],
+      "inputs": {
+        "rawString": "5000,true"
+      },
+      "expectedOutput": "true"
     }
   ]
 }
