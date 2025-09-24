@@ -15,6 +15,15 @@ def levenshtein_distance(s1, s2):
         prev = curr
     return prev[-1]
 
+def min_normalized_levenshtein(vals1, vals2):
+    """Compute minimum normalized Levenshtein distance between two lists of values."""
+    dists = [
+        levenshtein_distance(str(v1), str(v2)) / max(len(str(v1)), len(str(v2)))
+        if max(len(str(v1)), len(str(v2))) > 0 else 0.0
+        for v1 in vals1 for v2 in vals2
+    ]
+    return min(dists)
+
 def compute_matrix(ids, values_dict):
     """
     Compute normalized Levenshtein distance between all pairs in ids, using values_dict.
@@ -28,19 +37,15 @@ def compute_matrix(ids, values_dict):
         for idx2, id2 in enumerate(ids):
             if idx2 < idx1:
                 matrix[id1][id2] = matrix[id2][id1]
-                continue
-            if id1 == id2:
+            elif id1 == id2:
                 matrix[id1][id2] = 0.0
-                continue
-            vals2 = values_dict[id2] if isinstance(values_dict[id2], list) else [values_dict[id2]]
-            # Efficient min across all pairwise comparisons (list comprehensions are fast in Python)
-            dists = [levenshtein_distance(str(v1), str(v2)) / max(len(str(v1)), len(str(v2))) if max(len(str(v1)), len(str(v2))) > 0 else 0.0 
-                     for v1 in vals1 for v2 in vals2]
-            matrix[id1][id2] = min(dists)
+            else:
+                vals2 = values_dict[id2] if isinstance(values_dict[id2], list) else [values_dict[id2]]
+                matrix[id1][id2] = min_normalized_levenshtein(vals1, vals2)
     return matrix
 
 def main():
-    test_case_file = os.path.join("test", "test_cases.json")
+    test_case_file = os.path.join("test", "cases.json")
     string_distance_dir = os.path.join("test", "string-distance")
     input_matrix_file = os.path.join(string_distance_dir, "input.json")
     output_matrix_file = os.path.join(string_distance_dir, "output.json")
