@@ -1,0 +1,14 @@
+{
+	"TC001": {
+		"input": "100",
+		"output": "true"
+	},
+	"TC002": {
+		"input": "200",
+		"output": "false"
+	},
+	"TC003": {
+		"input": "300",
+		"output": "false"
+	}
+}

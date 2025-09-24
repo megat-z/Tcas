@@ -6,11 +6,9 @@ __pycache__/
 .Python
 env/
 venv/
-pip-selfcheck.json
 
 # Secrets
 *.env
-secrets.json
 *.pat
 
 # IDE/Editor specific
